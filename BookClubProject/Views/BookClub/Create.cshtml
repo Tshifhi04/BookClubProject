@@ -1,0 +1,54 @@
+﻿@using BookClubProject.Data.Enum;
+@using BookClubProject.ViewModel;
+@model BookClubViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="BookName">Title</label>
+        <input asp-for="BookName" class="form-control" placeholder="Whats the name of the Book?">
+        <span asp-validation-for="BookName" class="text-bg-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Enter Description">
+        <span asp-validation-for="Description" class="text-bg-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-bg-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BookCategory">Category</label>
+        <select asp-for="BookCategory" asp-items="@Html.GetEnumSelectList<BookCategory>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+
+
+        <span asp-validation-for="BookCategory" class="text-bg-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="price">Price</label>
+        <input asp-for="price" class="form-control" placeholder="price of the book">
+        <span asp-validation-for="price" class="text-bg-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-bg-danger"></span>
+    </div>
+@*
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>*@
+    @*    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>*@
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

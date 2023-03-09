@@ -74,7 +74,7 @@ namespace BookClubProject.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "teddysmithdeveloper@gmail.com";
+                string adminUserEmail = "vhuhulwi04@gmail.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)

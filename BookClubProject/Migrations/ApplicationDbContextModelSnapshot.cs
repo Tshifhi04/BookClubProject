@@ -123,7 +123,7 @@ namespace BookClubProject.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("BookClubs");
+                    b.ToTable("BookClubs", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
